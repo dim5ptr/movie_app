@@ -32,7 +32,7 @@ export const ColumnDisplay = ({ data, displayType }) => {
 
     return (
         <div>
-            <Grid columns={2} stackable centered verticalAlign="top" padded="vertically">
+            <Grid columns={5} stackable centered verticalAlign="top" padded="vertically">
                 {data.map((displayData) => (
                     <Grid.Column key={displayData.id}>
                         <Card.Group>
@@ -64,26 +64,26 @@ export const ColumnDisplay = ({ data, displayType }) => {
                                 </Card.Content>
                             </Link>
                             <Form style={{ marginTop: 5 }}>
-                                        <Form.Group inline>
-                                            <Form.Field>
-                                                <Form.Input
-                                                    type="number"
-                                                    min="1"
-                                                    max="10"
-                                                    step="0.5"
-                                                    onChange={(e) => setRating(Number(e.target.value))}
-                                                    action={{
-                                                        color: "blue",
-                                                        labelPosition: "right",
-                                                        icon: "star",
-                                                        content: "Rate",
-                                                        onClick: () => rate(displayData.id), // Memanggil mutate di sini
-                                                        style: { backgroundColor: '#8a2be2', color: 'white', cursor: 'pointer' }
-                                                    }}
-                                                />
-                                            </Form.Field>
-                                        </Form.Group>
-                                    </Form>
+                                <Form.Group inline>
+                                    <Form.Field>
+                                        <Form.Input
+                                            type="number"
+                                            min="1"
+                                            max="10"
+                                            step="0.5"
+                                            onChange={(e) => setRating(Number(e.target.value))}
+                                            action={{
+                                                color: "blue",
+                                                labelPosition: "right",
+                                                icon: "star",
+                                                content: "Rate",
+                                                onClick: () => rate(displayData.id), // Memanggil mutate di sini
+                                                style: { backgroundColor: '#0047AB', color: 'white', cursor: 'pointer' }
+                                            }}
+                                        />
+                                    </Form.Field>
+                                </Form.Group>
+                            </Form>
                         </Card.Group>
                     </Grid.Column>
                 ))}

@@ -7,9 +7,8 @@ import { fetchMovieDetails } from "./query";
 export const Movie = () => {
     const { id } = useParams();
     const [segmentStyle, setSegmentStyle] = useState({
-        backgroundColor: "blue",
-        color: "white",
-        transition: "background-color 0.3s ease",
+        backgroundColor: "#87CEEB",
+        color: "black",
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)"
     });
 
@@ -32,11 +31,11 @@ export const Movie = () => {
     };
 
     return (
-        <div className="movie-container" style={{ marginTop: 50 }}>
+        <div className="movie-container" style={{ marginTop: 50, marginBottom: 50 }}>
             <Segment
                 style={segmentStyle}
-                onMouseEnter={() => setSegmentStyle({ ...segmentStyle, backgroundColor: "oceanblue" })}
-                onMouseLeave={() => setSegmentStyle({ ...segmentStyle, backgroundColor: "blue" })}
+                onMouseEnter={() => setSegmentStyle({ ...segmentStyle, backgroundColor: "#87CEEB" })}
+                onMouseLeave={() => setSegmentStyle({ ...segmentStyle, backgroundColor: "#87CEEB" })}
             >
                 <Header as="h2" textAlign="center" style={{ marginBottom: 20 }}>
                     {data.title}
@@ -55,15 +54,15 @@ export const Movie = () => {
                         <Grid.Column width={10}>
                             <List divided relaxed>
                                 <List.Item>
-                                    <List.Header>Is The Movie For Adults:</List.Header>
-                                    <List.Content>{data.adult ? "Yes" : "No"}</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Is The Movie For Adults:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>{data.adult ? "Yes" : "No"}</List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Budget:</List.Header>
-                                    <List.Content>${data.budget.toLocaleString()}</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Budget:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>${data.budget.toLocaleString()}</List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Genres:</List.Header>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Genres:</List.Header>
                                     <List.Content>
                                         <Label.Group>
                                             {data.genres.map((genre) => (
@@ -85,38 +84,38 @@ export const Movie = () => {
                                     </List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Rating:</List.Header>
-                                    <List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Rating:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>
                                         <Rating icon="star" defaultRating={data.vote_average} maxRating={10} disabled />
                                     </List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Popularity:</List.Header>
-                                    <List.Content>{data.popularity}</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Popularity:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>{data.popularity}</List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Production Companies:</List.Header>
-                                    <List.Content>{data.production_companies.map((company) => company.name).join(", ")}</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Production Companies:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>{data.production_companies.map((company) => company.name).join(", ")}</List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Release Date:</List.Header>
-                                    <List.Content>{data.release_date}</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Release Date:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>{data.release_date}</List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Revenue:</List.Header>
-                                    <List.Content>${data.revenue.toLocaleString()}</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Revenue:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>${data.revenue.toLocaleString()}</List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Runtime:</List.Header>
-                                    <List.Content>{data.runtime} minutes</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Runtime:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>{data.runtime} minutes</List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Language:</List.Header>
-                                    <List.Content>{data.original_language}</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Language:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>{data.original_language}</List.Content>
                                 </List.Item>
                                 <List.Item>
-                                    <List.Header>Description:</List.Header>
-                                    <List.Content>{data.overview}</List.Content>
+                                    <List.Header style={{ color: 'black', fontSize: '1.1em' }}>Description:</List.Header>
+                                    <List.Content style={{ color: '#333', fontSize: '1em' }}>{data.overview}</List.Content>
                                 </List.Item>
                             </List>
                         </Grid.Column>

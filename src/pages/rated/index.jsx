@@ -23,16 +23,16 @@ export const Rated = () => {
     }
 
     return (
-        <Container style={{ marginTop: 50 }}>
+        <Container style={{ marginTop: 50, marginBottom: 50 }}>
             <Segment
                 style={{
-                    backgroundColor: "blue",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Add shadow
+                    backgroundColor: "#87CEEB",
+                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", // Add shadow
                     transition: "background-color 0.3s ease", // Add transition for background color change
                 }}
             >
                 <div>
-                    <Header as="h2" style={{ color: "white" }}>Rated Movies</Header> {/* Add color white for header */}
+                    <Header as="h2" style={{ color: "black" }}>Rated Movies</Header> {/* Add color white for header */}
                     {isLoading ? (
                         <div>Loading...</div>
                     ) : (
